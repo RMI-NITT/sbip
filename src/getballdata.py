@@ -48,9 +48,14 @@ class image_converter:
       cX = int(M["m10"] / M["m00"])
       cY = int(M["m01"] / M["m00"])
       cX,cY = ftransform(cX,cY)
+      bp = Pose()
+      bp.position.x = cX
+      bp.position.y = cY
+      
 
     try:
       self.image_pub.publish(self.bridge.cv2_to_imgmsg(mask_white, "mono8"))
+      self.ballpub.publish(bp)
     except CvBridgeError as e:
       print(e)
 

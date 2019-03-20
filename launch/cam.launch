@@ -15,8 +15,9 @@
   <node name="roigen" pkg="sbip" type="roigen.py" respawn="false" output="screen"/>
   <node name="botdata" pkg="sbip" type="getbotdata.py" respawn="false" output="screen"/>
   <node name="balldata" pkg="sbip" type="getballdata.py" respawn="false" output="screen"/>
+  <node name="balltwist" pkg="sbip" type="ballspeed.py" respawn="false" output="screen"/>
   <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
-    <remap from="image" to="/botmask"/>
+    <remap from="image" to="/fieldroi"/>
     <param name="autosize" value="true" />
   </node>
 </launch>
